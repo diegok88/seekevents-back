@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CATEMP {
+  cteide Int @id @default(autoincrement())
+  ctedes String
+  ctesta String
+  cademp CADEMP[]
+}
+
+model CADEND {
+  cenide Int @id @default(autoincrement())
+  cenrua String 
+  cennum Int
+  cenbai String 
+  cencid String
+  censta String
+  cademp CADEMP[]
+}
+
+model CADEMP {
+  cdeide Int @id @default(autoincrement())
+  cdenom String
+  cdecnp String
+  categoria CATEMP @relation(fields: [cdecte], references: [cteide])
+  cdecte Int 
+  endereco CADEND @relation(fields:[cdecen], references: [cenide])
+  cdecen Int 
+  cdesta String
+  usuario CADUSU[]
+}
+
+model CADPER {
+  cdpide Int @id @default(autoincrement())
+  cdpdes String
+  cdpsta String
+  usuario CADUSU[]
+}
+
+model CADUSU {
+  cduide Int @id @default(autoincrement())
+  cdunom String
+  cducpf String
+  cduema String
+  cdusen String
+  perfil CADPER @relation(fields: [cduper], references: [cdpide])
+  cduper Int
+  empresa CADEMP @relation(fields: [cduemp], references: [cdeide])
+  cduemp Int
+  cdufac String
+  cduins String
+  cdutel String
+  cdusta String
+}
