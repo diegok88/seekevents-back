@@ -54,7 +54,7 @@ model CADUSU {
   cduide Int @id @default(autoincrement())
   cdunom String
   cducpf String
-  cduema String
+  cduema String @unique
   cdusen String
   perfil CADPER @relation(fields: [cduper], references: [cdpide])
   cduper Int

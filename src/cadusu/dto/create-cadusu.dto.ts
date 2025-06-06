@@ -11,8 +11,6 @@ export class CreateCadusuDto {
     cdusen: string;
     @IsNumber()
     cduper: number;
-    @IsNumber()
-    cduemp: number;
     @IsString()
     cdufac: string;
     @IsString()

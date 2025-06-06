@@ -8,6 +8,8 @@ export class CreateCadempDto {
     @IsNumber()
     cdecte: number;
     @IsNumber()
+    cdeusu: number;
+    @IsNumber()
     cdecen: number;
     @IsString()
     cdesta: string;

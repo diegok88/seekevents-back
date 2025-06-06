@@ -14,6 +14,7 @@ export class CadempService {
       cdenom: dado.cdenom,
       cdecnp: dado.cdecnp,
       cdecte: dado.cdecte,
+      cdeusu: dado.cdeusu,
       cdecen: dado.cdecen,
       cdesta: dado.cdesta,
     }

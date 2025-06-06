@@ -16,7 +16,6 @@ export class CadusuService {
       cduema: dado.cduema,
       cdusen: dado.cdusen,
       cduper: dado.cduper,
-      cduemp: dado.cduemp,
       cdufac: dado.cdufac,
       cduins: dado.cduins,
       cdutel: dado.cdutel,

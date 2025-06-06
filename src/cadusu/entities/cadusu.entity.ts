@@ -5,7 +5,6 @@ export class Cadusu {
     cduema: string;
     cdusen: string;
     cduper: number;
-    cduemp: number;
     cdufac: string;
     cduins: string;
     cdutel: string;
