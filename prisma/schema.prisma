@@ -63,4 +63,45 @@ model CADUSU {
   cdutel String
   cdusta String
   empresa CADEMP[]
+  usuario CADEVE[]
+}
+
+model CATEVE {
+  caeide Int @id @default (autoincrement())
+  caedes String 
+  caesta String
+  categoria CADEVE[]
+}
+
+model FORPAG {
+  fpaide Int @id @default (autoincrement())
+  fpades String 
+  fpasta String
+  pagamento CADEVE[]
+}
+
+model TABDIV {
+  tadide Int @id @default (autoincrement())
+  taddes String 
+  tabdur Int
+  tadval Decimal @db.Decimal(10, 2)
+  tabsta String
+  tabela CADEVE[]
+}
+
+model CADEVE {
+  cevide Int @id @default (autoincrement())
+  cevnom String 
+  cevdes String
+  cevdat DateTime 
+  cevcae Int
+  categoria CATEVE @relation(fields: [cevcae], references: [caeide])
+  cevtad Int
+  tabela TABDIV @relation(fields: [cevtad], references: [tadide])
+  cevfpa Int
+  pagamento FORPAG @relation(fields: [cevfpa], references: [fpaide])
+  cevcdu Int
+  usuario CADUSU @relation(fields: [cevcdu], references: [cduide])
+  cevima String
+  cevsta String
 }
